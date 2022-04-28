@@ -50,9 +50,9 @@ $display(“wrong output!”);
 end
 
   
-//saturate is 0, width is 1, and at least one of the four 8-bit additions overflows
+//saturate is 0, width is 0, and at least one of the four 8-bit additions overflows
 in1 = 1'b0;
-in2 = 2'b01;
+in2 = 2'b00;
 in3 = 32'b01000000_00000000_00000000_11111111;
 in4 = 32'b00000000_00000000_00000000_00000001;
 #1;
@@ -61,9 +61,9 @@ $display(“wrong output!”);
 end
 
   
-//saturate is 1, width is 1, and at least one of the four 8-bit additions saturates
+//saturate is 1, width is 0, and at least one of the four 8-bit additions saturates
 in1 = 1'b1;
-in2 = 2'b01;
+in2 = 2'b00;
 in3 = 32'b01000000_00000000_00000000_01111111;
 in4 = 32'b00000000_00000000_00000000_00000001;
 #1;
