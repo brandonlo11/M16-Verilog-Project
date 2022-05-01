@@ -13,7 +13,6 @@ module alu(
   wire [3:0] sat_sign;
   wire [3:0] sat_last;
   wire [31:0] d;
-  wire [31:0] e;
   
   add8 add1(.a(a[7:0]), .b(b[7:0]), .carry_in(carry_in[0]), .c(d[7:0]), .sign(sign[0]), .overflow(overflow[0]), .carry_out(carry_out[0]));
   
