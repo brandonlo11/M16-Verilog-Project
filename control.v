@@ -54,7 +54,6 @@ always @(*) begin
         sat_sign[3] = 1;
         sat_sign[2] = 1;
       end else begin
-        
         sat_sign[3] = 0;
         sat_sign[2] = 0;
       end
@@ -65,7 +64,6 @@ always @(*) begin
         sat_sign[1] = 1;
         sat_sign[0] = 1;
       end else begin
-        
         sat_sign[1] = 0;
         sat_sign[0] = 0;
       end
@@ -80,7 +78,6 @@ always @(*) begin
       sat_enable[1] = 1;
       sat_enable[0] = 1;
     end
-    
     
   end
   
