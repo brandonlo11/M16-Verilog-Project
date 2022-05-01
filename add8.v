@@ -17,9 +17,9 @@ always @(*) begin
   sign = (c[7] == 1);
   if (a[7] == b[7]) begin
     if (a[7] == 0)
-      overflow = (sign == 0);
-    if (a[7] == 1)
       overflow = (sign == 1);
+    if (a[7] == 1)
+      overflow = (sign == 0);
   end
 end
   
