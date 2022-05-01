@@ -9,8 +9,15 @@ module control(
   output reg [3:0] sat_sign,
   output reg [3:0] sat_last
 );
-
+  
 always @(*) begin
+  
+  sat_sign = sign;
+  
+  if(saturate) begin 
+    sat_enable = 4'b1111;
+  end 
+  
   if (width == 2'b10) begin
     carry_in[3] = carry_out[2];  
     carry_in[2] = carry_out[1];
