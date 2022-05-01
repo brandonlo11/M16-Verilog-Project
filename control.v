@@ -13,6 +13,8 @@ module control(
 always @(*) begin
   
   sat_sign = sign;
+  sat_last = 4'b1111;
+  sat_enable = 4'b0000;
   
   if(saturate) begin 
     sat_enable = 4'b1111;
