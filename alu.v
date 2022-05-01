@@ -27,11 +27,11 @@ module alu(
             
   saturation sat1(.a(d[7:0]), .sat_enable(sat_enable[0]), .sat_sign(sat_sign[0]), .sat_last(sat_last[0]), .out(e[7:0]));
             
-  saturation sat1(.a(d[15:8]), .sat_enable(sat_enable[1]), .sat_sign(sat_sign[1]), .sat_last(sat_last[1]), .out(e[15:8]));
+  saturation sat2(.a(d[15:8]), .sat_enable(sat_enable[1]), .sat_sign(sat_sign[1]), .sat_last(sat_last[1]), .out(e[15:8]));
             
-  saturation sat1(.a(d[23:16]), .sat_enable(sat_enable[2]), .sat_sign(sat_sign[2]), .sat_last(sat_last[2]), .out(e[23:16]));
+  saturation sat3(.a(d[23:16]), .sat_enable(sat_enable[2]), .sat_sign(sat_sign[2]), .sat_last(sat_last[2]), .out(e[23:16]));
   
-  saturation sat1(.a(d[31:24]), .sat_enable(sat_enable[3]), .sat_sign(sat_sign[3]), .sat_last(sat_last[3]), .out(e[31:24]));
+  saturation sat4(.a(d[31:24]), .sat_enable(sat_enable[3]), .sat_sign(sat_sign[3]), .sat_last(sat_last[3]), .out(e[31:24]));
          
 assign c = e;
             
