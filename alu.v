@@ -2,7 +2,7 @@ module alu(
     input [31:0] a, b,
     input [1:0] width,
     input saturate,
-    output reg [31:0] c
+    output [31:0] c
 );
 
   wire [3:0] carry_out;
@@ -25,14 +25,13 @@ module alu(
 
   control c1(.saturate(saturate), .width(width), .sign(sign), .overflow(overflow), .carry_out(carry_out), .carry_in(carry_in), .sat_enable(sat_enable), .sat_sign(sat_sign), .sat_last(sat_last));
             
-  saturation sat1(.a(d[7:0]), .sat_enable(sat_enable[0]), .sat_sign(sat_sign[0]), .sat_last(sat_last[0]), .out(e[7:0]));
+  saturation sat1(.a(d[7:0]), .sat_enable(sat_enable[0]), .sat_sign(sat_sign[0]), .sat_last(sat_last[0]), .out(c[7:0]));
             
-  saturation sat2(.a(d[15:8]), .sat_enable(sat_enable[1]), .sat_sign(sat_sign[1]), .sat_last(sat_last[1]), .out(e[15:8]));
+  saturation sat2(.a(d[15:8]), .sat_enable(sat_enable[1]), .sat_sign(sat_sign[1]), .sat_last(sat_last[1]), .out(c[15:8]));
             
-  saturation sat3(.a(d[23:16]), .sat_enable(sat_enable[2]), .sat_sign(sat_sign[2]), .sat_last(sat_last[2]), .out(e[23:16]));
+  saturation sat3(.a(d[23:16]), .sat_enable(sat_enable[2]), .sat_sign(sat_sign[2]), .sat_last(sat_last[2]), .out(c[23:16]));
   
-  saturation sat4(.a(d[31:24]), .sat_enable(sat_enable[3]), .sat_sign(sat_sign[3]), .sat_last(sat_last[3]), .out(e[31:24]));
-         
-assign c = e;
+  saturation sat4(.a(d[31:24]), .sat_enable(sat_enable[3]), .sat_sign(sat_sign[3]), .sat_last(sat_last[3]), .out(c[31:24]));
+  
             
 endmodule
