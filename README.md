@@ -15,4 +15,8 @@ My ALU is implemented in a Verilog module called alu, in a file called alu.v. Th
 – width : a 2-bit signal that is 0 when 8-bit mode is requested, 1 when 16-bit mode is requested, and 2 when 32-bit mode is requested  
 – c : the 32-bit result
 
+My alu module is implemented using three submodules: add8, saturation, and control. The add8 module is used to perform 8-bit wrapping additions, and to detect overflow conditions. The saturation module is used to optionally saturate the resulting 8-bit values. Lastly, the control module is used to generate the proper control signals for the requested operation. 
+
+Therefore, my alu module has the following structure:
+
 <img width="869" alt="Screen Shot 2023-03-03 at 3 29 42 PM" src="https://user-images.githubusercontent.com/103808636/222854962-a4a32db6-0fa3-48c6-9a16-bf4b2b01500a.png">
